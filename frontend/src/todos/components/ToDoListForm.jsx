@@ -41,13 +41,13 @@ export const ToDoListForm = ({ toDoList, saveToDoList }) => {
     let currentDate = new Date()
 
     let diffInTime = dueDate.getTime() - currentDate.getTime()
-    let diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24)) +1
+    let diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24)) + 1
 
-    if(diffInDays === 0){
+    if (diffInDays === 0) {
       return "Due today"
-    }else if(diffInDays < 0){
+    } else if (diffInDays < 0) {
       return Math.abs(diffInDays) + " days overdue"
-    }else{
+    } else {
       return diffInDays + " days due"
     }
   }
@@ -97,7 +97,6 @@ export const ToDoListForm = ({ toDoList, saveToDoList }) => {
                 defaultValue={todo.dueDate}
                 className={classes.textField}
                 onChange={event => {
-                  console.log("Saving due date! " + event.target.value)
                   setTodos([ // immutable update
                     ...todos.slice(0, index),
                     { todoText: todo.todoText, completed: todo.completed, dueDate: event.target.value },
