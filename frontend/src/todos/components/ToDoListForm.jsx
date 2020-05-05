@@ -132,7 +132,7 @@ export const ToDoListForm = ({ toDoList, saveToDoList }) => {
                   ])
                   setChangeMade(true)
                 }}
-                inputProps={{ 'aria-label': 'primary checkbox' }}
+                inputProps={{ 'aria-label': 'Check when completed' }}
               />
               <Button
                 title="Delete todo"
