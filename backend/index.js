@@ -13,26 +13,40 @@ const PORT = 3001
 let todoList = {
   '0000000001': {
     id: '0000000001',
-    title: 'First List',
+    title: 'Make a seagul friend',
     todos: [{
-      todoText: 'First todo of first list!',
+      todoText: 'Visit seagul store',
       completed: true,
-      dueDate: "2020-05-10"
+      dueDate: "2020-05-03"
+    },
+    {
+      todoText: 'Buy seagul',
+      completed: true,
+      dueDate: "2020-05-15"
+    },
+    {
+      todoText: 'Teach seagul tango',
+      completed: false,
+      dueDate: "2020-06-01"
     }]
   },
   '0000000002': {
     id: '0000000002',
-    title: 'Second List',
+    title: 'Ingredients for oatmeal porridge',
     todos: [{
-      todoText: 'First todo of second list!',
-      completed: false,
-      dueDate: "2020-12-24"
+      todoText: 'Buy water',
+      completed: true,
+      dueDate: "2020-05-10"
+    },
+    {
+      todoText: 'Buy oats',
+      completed: true,
+      dueDate: "2020-05-10"
     }],
   }
 }
 
 app.get('/todo', (req, res) => {
-  console.log("todoList: " + JSON.stringify(todoList))
   res.send(todoList)
 })
 
