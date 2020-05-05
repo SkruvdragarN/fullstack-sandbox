@@ -9,7 +9,7 @@ const MainAppBar = () => {
   return <AppBar position='static' color='primary'>
     <Toolbar>
       <Typography variant='h6' color='inherit'>
-        Things to do
+       <span role="img" aria-label="check emoji">✅</span> Things to do 
       </Typography>
     </Toolbar>
   </AppBar>
