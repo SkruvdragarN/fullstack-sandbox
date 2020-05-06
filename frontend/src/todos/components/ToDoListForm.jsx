@@ -37,11 +37,10 @@ export const ToDoListForm = ({ toDoList, saveToDoList }) => {
   }
 
   function daysLeftToDateStr(dateStr) {
-    let dueDate = new Date(dateStr)
-    let currentDate = new Date()
+    let dueDateTime = new Date(dateStr).getTime()
+    let currentDateTime = new Date().getTime()
 
-    let diffInTime = dueDate.getTime() - currentDate.getTime()
-    let diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24)) + 1
+    let diffInDays = Math.floor((dueDateTime - currentDateTime) / (1000 * 3600 * 24)) + 1
 
     if (diffInDays === 0) {
       return "Due today"
